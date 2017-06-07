@@ -1,7 +1,6 @@
 import EventEmitter from 'eventemitter3';
 import THREE from 'three';
 import OrbitControls from '../vendor/OrbitControls';
-import TweenLite from 'TweenLite';
 
 // Prevent animation from pausing when tab is inactive
 TweenLite.lagSmoothing(0);

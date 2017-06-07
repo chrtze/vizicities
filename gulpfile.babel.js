@@ -70,14 +70,12 @@ function build() {
     .pipe(webpackStream({
       output: {
         filename: exportFileName + '.js',
-        libraryTarget: 'umd',
-        library: config.mainVarName
+        // libraryTarget: 'umd',
+        // library: config.mainVarName
       },
       externals: {
         // Proxy the global THREE variable to require('three')
-        'three': 'THREE',
-        // Proxy the global THREE variable to require('TweenLite')
-        'TweenLite': 'TweenLite',
+        // 'three': 'THREE',
         // Proxy the global THREE variable to require('TweenMax')
         'TweenMax': 'TweenMax',
         // Proxy the global THREE variable to require('TimelineLite')
@@ -105,7 +103,7 @@ function build() {
     // jscs:enable
 
     // Using the mangle option above breaks the sourcemap for some reason
-    .pipe($.uglify())
+    // .pipe($.uglify())
 
     .pipe($.sourcemaps.write('./'))
     .pipe(gulp.dest(destinationFolder))
