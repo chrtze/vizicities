@@ -2,7 +2,7 @@
  * BufferGeometry helpers
  */
 
-import THREE from 'three';
+
 
 var Buffer = (function() {
   // Merge multiple attribute objects into a single attribute object

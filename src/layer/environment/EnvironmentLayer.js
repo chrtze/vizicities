@@ -1,6 +1,6 @@
 import Layer from '../Layer';
 import extend from 'lodash.assign';
-import THREE from 'three';
+
 import Skybox from './Skybox';
 
 // TODO: Make sure nothing is left behind in the heap after calling destroy()
@@ -127,8 +127,8 @@ class EnvironmentLayer extends Layer {
   destroy() {
     this._skyboxLight = null;
 
-    this.remove(this._skybox._mesh);
-    this._skybox.destroy();
+    // this.remove(this._skybox._mesh);
+    // this._skybox.destroy();
     this._skybox = null;
 
     super.destroy();

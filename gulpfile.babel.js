@@ -70,12 +70,12 @@ function build() {
     .pipe(webpackStream({
       output: {
         filename: exportFileName + '.js',
-        // libraryTarget: 'umd',
-        // library: config.mainVarName
+        libraryTarget: 'umd',
+        library: config.mainVarName
       },
       externals: {
         // Proxy the global THREE variable to require('three')
-        // 'three': 'THREE',
+        'three': 'THREE',
         // Proxy the global THREE variable to require('TweenMax')
         'TweenMax': 'TweenMax',
         // Proxy the global THREE variable to require('TimelineLite')
@@ -103,7 +103,7 @@ function build() {
     // jscs:enable
 
     // Using the mangle option above breaks the sourcemap for some reason
-    // .pipe($.uglify())
+    .pipe($.uglify())
 
     .pipe($.sourcemaps.write('./'))
     .pipe(gulp.dest(destinationFolder))
@@ -236,7 +236,7 @@ gulp.task('lint', ['lint-src', 'lint-test', 'lint-gulpfile']);
 gulp.task('move-css', ['clean'], moveCSS);
 
 // Build two versions of the library
-gulp.task('build', ['lint', 'move-css'], build);
+gulp.task('build', ['move-css'], build);
 
 // Lint and run our tests
 gulp.task('test', ['lint'], test);

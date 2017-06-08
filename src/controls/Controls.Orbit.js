@@ -1,5 +1,5 @@
 import EventEmitter from 'eventemitter3';
-import THREE from 'three';
+
 import OrbitControls from '../vendor/OrbitControls';
 
 // Prevent animation from pausing when tab is inactive

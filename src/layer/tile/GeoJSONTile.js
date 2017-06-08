@@ -1,7 +1,7 @@
 import Tile from './Tile';
 import {geoJSONLayer as GeoJSONLayer} from '../GeoJSONLayer';
 import BoxHelper from '../../vendor/BoxHelper';
-import THREE from 'three';
+
 import reqwest from 'reqwest';
 import {point as Point} from '../../geo/Point';
 import {latLon as LatLon} from '../../geo/LatLon';
